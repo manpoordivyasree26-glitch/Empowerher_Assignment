@@ -18,3 +18,16 @@ function checkPrime(num)
     }
 }
 console.log(checkPrime(num))
+
+///check even odd
+
+if(num%2==0)
+{
+ console.log("Even")
+}
+ else
+ {
+console.log("Odd")
+ }
+    
+
