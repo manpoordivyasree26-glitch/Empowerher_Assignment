@@ -3,9 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Domino's Pizza</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            font-family:Arial;
+        }
+        #navbar{
+            display:flex;
+            justify-content:space-between;
+            align-items: content;
+            padding:10px;
+            border:2px solid black;
+        }
+        #navbar h1{
+            color:blue;
+            font-size:22px;
+        }
+        #links{
+        display:flex;
+        gap: 24px;
+        }
+        #links p{
+            color:blue;
+            font-size:15px;
+        }
+        button{
+            color:white;
+            background-color:red;
+            border:red;
+            padding:10px;
+        }
+        #order-section
+        {
+            padding:10px;
+        }
+        #order-section h2{
+            margin-bottom:15px;
+        }
+        #top-section{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap:20px;
+        }
+        .cards {
+            background-color: red;
+            text-align: center;
+            color:white;
+            min-height:320px;
+            box-sizing: border-box;
+            padding:30px 20px;
+        }
+        .cards img{
+            width:180px;
+            margin-bottom:20px;
+        }
+        .cards h3{
+            font-size:22px ;
+            margin-bottom:10px ;
+        }
+        p{
+            font-size: 14px;
+            text-align:center;
+            margin-bottom:20px ;
+            line-height:1.4;
+        }
+        button{
+            background:white;
+            color:red;
+            border:1px solid white;
+            padding:8px 15px;
+        }
+        #mid-section{
+            margin:40px;
+         }
+         #mid_section h2{
+            margin-bottom: 20px;
+         }
+         #mid-grid{
+         display:grid;
+         grid-template-columns: repeat(4, 1fr);
+        gap:20px;
+        text-align: center;
+        }
+        .mid-card{
+            background:white;
+            text-align:centre;
+            padding:25px;
+            box-shadow:0 0 4px black;
+        }
+        .mid-card img{
+            width:60px;
+            margin-bottom: 15px;
+         }
+         .mid-card h3{
+            font-size: 18px;
+            margin-bottom:10px;
+         }
+         .mid-card p{
+            font-size: 14px;
+            margin-bottom:15px;
+         }
+         .line
+         {
+            width:80%;
+            height:2px;
+            background-color: black;
+            margin:auto;
+            margin-bottom: 15px;
+         }
+         .mid-card button{
+            color:red;
+            background-color: white;
+            border:none;
+            cursor:pointer;
+            font-size:13px;
+         }
+    </style>
 </head>
 <body>
-    <h1>hello</h1>
+    <div id="navbar">
+        <h1>Domino's Pizza</h1>
+        <div id="links">
+            <p>OUR MENU</p>
+            <P>DOMINO'S STORES</P>
+            <p>GIFT CARD</p>
+            <P>CORPORATE ENQUIRY</P>
+            <P>CONTACT</P>
+        </div>
+        <button>Download App</button>
+    </div>
+    <section id="order-section">
+        <h2>order</h2>
+        <div id="top-section">
+        <div class="cards">
+        <img src="https://img.freepik.com/free-photo/top-view-pepperoni-pizza-sliced-into-six-slices_141793-2157.jpg" width="100px" height="100px">
+        <h3>VEG PIZZA</h3>
+        <p>A delight for veggie lovers! Choose from our wide range of delicious vegetarian pizzas,it's softer and tastier</p>
+         <button>VIEW ALL</button>
+        </div>
+        <div class="cards">
+        <img src="https://img.freepik.com/free-photo/top-view-pepperoni-pizza-sliced-into-six-slices_141793-2157.jpg" width="100px" height="100px">
+        <h3>OUR MENU</h3>
+        <p>Indulge into mouth-watering taste of pizza mania range,perfect answer to all your food cravings</p>
+         <button>VIEW ALL</button>
+        </div>
+        <div class="cards">
+        <img src="https://wallpaperaccess.com/full/424729.jpg" width="100px" height="100px">
+        <h3>OUR MENU</h3>
+        <p>Choose your favouriate non-veg pizzas the Domaino's pizzas from the non-veg pizza with your choice of crusts&toppings</p>
+         <button>VIEW ALL</button>
+        </div>
+        <div class="cards">
+        <img src="https://img.freepik.com/free-photo/top-view-pepperoni-pizza-sliced-into-six-slices_141793-2157.jpg" width="100px" height="100px">
+        <h3>OUR MENU</h3>
+        <p>Choose your favouriate non-veg pizzas the Domaino's pizzas from the non-veg pizza with your choice of crusts&toppings </p>
+         <button>VIEW ALL</button>
+        </div>
+        <div class="cards">
+        <img src="https://img.freepik.com/free-photo/top-view-pepperoni-pizza-sliced-into-six-slices_141793-2157.jpg" width="100px" height="100px">
+        <h3>VEG PIZZA</h3>
+        <p>A delight for veggie lovers! Choose from our wide range of delicious vegetarian pizzas,it's softer and tastier</p>
+         <button>VIEW ALL</button>
+        </div>
+        <div class="cards">
+        <img src="https://wallpaperaccess.com/full/424729.jpg" width="100px" height="100px">
+        <h3>OUR MENU</h3>
+        <p>Indulge into mouth-watering taste of pizza mania range,perfect answer to all your food cravings</p>
+         <button>VIEW ALL</button>
+        </div>
+        </div>
+        <section id="mid-section">
+            <h2>Explore</h2>
+            <div id="mid-grid">
+                <div class="mid-card">
+                <img src="https://img.freepik.com/premium-vector/book-cover-black-white-border-frame_731703-479.jpg?w=900" width="50px" height="50px">
+             <h3>OUR MENU</h3>
+             <p>Explore our range of delicious pizzas,delivered in 30 minutes</p>
+            <button>DISCOVER PIZZA</button>
+            </div>
+            <div class="mid-card">
+                <img src="https://img.freepik.com/premium-vector/book-cover-black-white-border-frame_731703-479.jpg?w=900" width="50px" height="50px">
+             <h3>OUR MENU</h3>
+             <p>Explore our range of delicious pizzas,delivered in 30 minutes</p>
+            <button>DISCOVER PIZZA</button>
+            </div>
+            <div class="mid-card">
+                <img src="https://img.freepik.com/premium-vector/book-cover-black-white-border-frame_731703-479.jpg?w=900" width="50px" height="50px">
+             <h3>OUR MENU</h3>
+             <p>Explore our range of delicious pizzas,delivered in 30 minutes</p>
+            <button>DISCOVER PIZZA</button>
+            </div>
+            <div class="mid-card">
+                <img src="https://img.freepik.com/premium-vector/book-cover-black-white-border-frame_731703-479.jpg?w=900" width="50px" height="50px">
+             <h3>OUR MENU</h3>
+             <p>Explore our range of delicious pizzas,delivered in 30 minutes</p>
+            <button>DISCOVER PIZZA</button>
+            </div>
+            <div class="mid-card">
+                <img src="https://img.freepik.com/premium-vector/book-cover-black-white-border-frame_731703-479.jpg?w=900" width="50px" height="50px">
+             <h3>OUR MENU</h3>
+             <p>Explore our range of delicious pizzas,delivered in 30 minutes</p>
+            <button>DISCOVER PIZZA</button>
+            </div>
+            <div class="mid-card">
+                <img src="https://img.freepik.com/premium-vector/book-cover-black-white-border-frame_731703-479.jpg?w=900" width="50px" height="50px">
+             <h3>OUR MENU</h3>
+             <p>Explore our range of delicious pizzas,delivered in 30 minutes</p>
+            <button>DISCOVER PIZZA</button>
+            </div>
+            <div class="mid-card">
+                <img src="https://img.freepik.com/premium-vector/book-cover-black-white-border-frame_731703-479.jpg?w=900" width="50px" height="50px">
+             <h3>OUR MENU</h3>
+             <p>Explore our range of delicious pizzas,delivered in 30 minutes</p>
+            <button>DISCOVER PIZZA</button>
+            </div>
+            <div class="mid-card">
+                <img src="https://img.freepik.com/premium-vector/book-cover-black-white-border-frame_731703-479.jpg?w=900" width="50px" height="50px">
+             <h3>OUR MENU</h3>
+             <p>Explore our range of delicious pizzas,delivered in 30 minutes</p>
+            <button>DISCOVER PIZZA</button>
+            </div>
+        </section>
+        </div>
+    </section>
 </body>
 </html>
