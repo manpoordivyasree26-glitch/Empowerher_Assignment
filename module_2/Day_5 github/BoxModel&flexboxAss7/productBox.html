@@ -1,11 +1,102 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create a product ShowCase Box</title>
+  <meta charset="UTF-8">
+  <title>Product Showcase Box</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+    .product-box {
+      width: 500px;
+      height: 600px;
+      margin: 40px auto;           
+      padding: 30px;              
+      border: 3px solid grey;
+      border-radius: 15px;
+      box-shadow: gray;
+      display: flex;               
+      flex-direction: column;     
+      justify-content: space-between; 
+      background-color: #ffffff;
+    }
+
+    .product-box img {
+      width: 100%;               
+      border-radius: 10px;
+    }
+
+    .product-title {
+      margin: 15px 0 5px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .product-desc {
+      margin: 5px 0 10px;
+      color: #555555;
+    }
+
+    .product-price {
+      margin: 5px 0;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      font-weight: normal;
+      font-size: 16px;
+      margin-left: 8px;
+      color: red;
+    }
+
+    .offer {
+      margin-left: 8px;
+      font-size: 16px;
+      color: green;
+    }
+
+    .bank-offer {
+      margin: 5px 0 15px;
+      color: green;
+      font-weight: bold;
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #2874f0;   
+      color: white;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+  </style>
 </head>
 <body>
-    
+
+  <div class="product-box">
+    <img src="https://th.bing.com/th/id/R.e397f788b2d3bfa17ba9a679e5dd10a7?rik=iwhniOaXIIhvww&riu=http%3a%2f%2fwww.bhphotovideo.com%2fimages%2fimages2500x2500%2fapple_mj2x2ll_a_watch_sport_smartwatch_38mm_1187194.jpg&ehk=eOf8xtWwoF1fgsEnYQ7Mtu8zDfvnfn4AR8bDjh%2bevBs%3d&risl=&pid=ImgRaw&r=0" alt="Samsung Galaxy Watch 6">
+     <h3 class="product-title">SAMSUNG Galaxy Watch6 LTE</h3>
+   <p class="product-desc">Graphite Strap, 44mm &nbsp; | &nbsp; Track BP, heart rate and more with AMOLED display.</p>
+    <p class="product-price">
+      &#8377;18,999
+      <span class="old-price">&#8377;41,999</span>
+      <span class="offer">54% off</span>
+    </p>
+    <p class="bank-offer">Bank Offer</p>
+    <button>Buy Now</button>
+    </div>
+  
+
 </body>
 </html>
+
+        
