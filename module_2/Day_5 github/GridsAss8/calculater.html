@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Calculater</title>
+    <style>
+        body{
+            background-color: white;
+            font-family: Arial;
+        }
+        #heading{
+            text-align: center;
+            margin-top: 40px;
+            color:#00695c;
+        }
+       #calc-box{
+       width: 260px;
+        margin: 40px auto;
+        padding: 25px;
+        background-color: #fdfdfd;
+        box-shadow: 0 0 8px rgba(0,0,0,0.15);
+        border-radius: 5px;
+         }
+       #display {
+       height: 45px;
+       border-radius: 4px;
+       border: 1px solid #e0e0e0;
+       margin-bottom: 15px;
+        background-color: #ffffff;
+          }
+        #buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+       }
+    #buttons > div {
+    height: 40px;
+    font-size: 14px;
+    background-color: white;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#buttons > div:nth-child(4),
+#buttons > div:nth-child(8),
+#buttons > div:nth-child(12),
+#buttons > div:nth-child(16) {
+    background-color: black;
+    color: white;
+}
+#buttons > div:nth-child(13) {
+    background-color: red;
+    color: white;
+    border: none;
+}
+
+    </style>
+</head>
+<body>
+    <div id="calc-box">
+        <div id="display"></div>
+        <div id="buttons">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>+</div>
+
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>-</div>
+
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>*</div>
+
+            <div>C</div>
+            <div>0</div>
+            <div>=</div>
+            <div>/</div>
+
+        </div>
+    </div>
+    
+</body>
+</html>

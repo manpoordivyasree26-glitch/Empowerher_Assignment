@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weeklyschedule</title>
+    <style>
+        #title{
+            background-color: white;
+            text-align: center;
+            font-family: Arial;
+          }
+         #schedule{
+          display:grid;
+           grid-template-columns :repeat(6, 1fr);
+             gap:10px;
+
+          }
+          #schedule>div{
+        background-color:grey;
+        border-radius: 10px;
+        display:flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding:5px;
+         }
+         #schedule> div:first-child{
+            visibility: hidden;
+         }
+         #schedule>div:last-child{
+            grid-column: 1/-1;
+            background-color: aqua;
+            text-align: left;
+            justify-content: start;
+         }
+         #schedule>div:nth-child(even){
+            background-color:pink;
+
+         }
+         #schedule>div:nth-child(odd){
+            background-color:yellow;
+
+         }
+         #schedule>div:nth-child(6n+1){
+            background-color: aqua;
+
+         }
+    </style>
+</head>
+<body>
+    <h1 id="title">weekly Schedule</h1>
+    <div id="schedule">
+        <div></div>
+        <div>Monday</div>
+        <div>Tuesday</div>
+        <div>Wednesday</div>
+        <div>Thursday</div>
+        <div>Friday</div>
+
+        <div>08:00</div>
+        <div>Maths</div>
+        <div>English</div>
+        <div>Evs</div>
+        <div>computer</div>
+        <div>Music</div>
+
+         <div>09:00</div>
+        <div>PT</div>
+        <div>PT</div>
+        <div>PT</div>
+        <div>PT</div>
+        <div>PT</div>
+
+         <div>10:00</div>
+        <div>science</div>
+        <div>Art</div>
+        <div>Maths</div>
+        <div>English</div>
+        <div>Craft</div>
+
+         <div>11:00</div>
+        <div>lunch</div>
+        <div>lunch</div>
+        <div>lunch</div>
+        <div>lunch</div>
+        <div>lunch</div>
+
+         <div>12:00</div>
+         <div>English</div>
+        <div>Maths</div>
+        <div>Computer</div>
+        <div>Evs</div>
+        <div>Maths</div>
+
+         <div>13:00</div>
+        <div>Art</div>
+        <div>Craft</div>
+        <div>Music</div>
+        <div>Maths</div>
+        <div>Science</div>
+
+         <div>14:00</div>
+        <div>Music</div>
+        <div>Evs</div>
+        <div>Science</div>
+        <div>Dance</div>
+        <div>craft</div>
+
+       
+
+         <div>15:00</div>
+        <div>break</div>
+        <div>break</div>
+        <div>break</div>
+        <div>break</div>
+        <div>break</div>
+
+         <div>16:00</div>
+        <div>Exam p</div>
+        <div>Exam p</div>
+        <div>Exam p</div>
+        <div>Exam p</div>
+        <div>Exam p</div>
+
+        <div>Note:</div>
+
+    </div>
+</body>
+</html>
