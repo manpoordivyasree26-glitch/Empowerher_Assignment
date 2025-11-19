@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Masai investors</title>
     <style>
         body {
     font-family: Arial, sans-serif;
@@ -53,8 +52,17 @@
 .logo {
     width: 80px;
 }
-
-    </style>
+@media (max-width: 900px) {
+            #container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            #container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+</style>
 </head>
 <body>
     <div id="container">
