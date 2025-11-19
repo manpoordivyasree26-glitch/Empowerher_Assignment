@@ -3,9 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Responsive Coffee Menu</title>
-
-    <!-- internal styling -->
     <style>
         * {
             margin: 0;
@@ -14,34 +11,27 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial;
             padding: 40px 20px;
-            background-color: #fdf4e3; /* light background */
+            background-color:beige;
         }
 
         h1 {
             text-align: center;
             margin-bottom: 30px;
         }
-
-        /* grid container */
         #menu {
-            max-width: 1100px;
             margin: auto;
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 cards per row – large screens */
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
-
-        /* single card */
         .card {
             background-color: white;
             padding: 24px;
             border-radius: 12px;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
         }
-
-        /* top row inside card: name + price */
         .card-top {
             display: flex;
             justify-content: space-between;
@@ -55,18 +45,14 @@
 
         .price {
             font-weight: bold;
-            color: #d39b3d; /* coffee / gold color */
+            color:gold;
         }
 
         .card p {
             font-size: 14px;
             line-height: 1.4;
-            color: #555;
+            color:gray;
         }
-
-        /* --------- MEDIA QUERIES ---------- */
-
-        /* medium screens – 2 cards per row */
         @media (max-width: 900px) {
             #menu {
                 grid-template-columns: repeat(2, 1fr);
