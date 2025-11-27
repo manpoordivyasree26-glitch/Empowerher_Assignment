@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Countdown Timer</title>
+</head>
+<body>
+
+<script>
+  let time = Number(prompt("Enter seconds to countdown:"));
+  console.log("Press 's' to stop the countdown");
+
+  let timer = setInterval(() => {
+    if (time >= 0) {
+      console.log("Time Left:", time);
+      time--;
+    } else {
+      clearInterval(timer);
+      timer = null;
+      console.log("Countdown Complete!");
+    }
+  }, 1000);
+
+  document.addEventListener("keydown", function(event) {
+    setTimeout(() => {
+      if ((event.key === "s" || event.key === "S") && timer !== null) {
+        clearInterval(timer);
+        timer = null;
+        console.log(" Countdown Stopped by User!");
+      }
+    }, 100);
+  });
+</script>
+
+</body>
+</html>
