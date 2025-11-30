@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive DOM</title>
+</head>
+<body>
+
+    <input type="text" id="bgColor" placeholder="Enter Color Name">
+    <br><br>
+
+    <input type="text" id="textInput" placeholder="Enter Text">
+    <br><br>
+
+    <button onclick="changeBackground()">Change Background</button>
+    <button onclick="updateText()">Update Text</button>
+    <br><br>
+
+    <div id="box" style="width: 250px; height: 120px; background: lightgray; padding: 10px;">
+        This is some initial content!
+    </div>
+
+    <script>
+        function changeBackground() {
+            let color = document.getElementById("bgColor").value.trim();
+            let box = document.getElementById("box");
+            box.style.background = color;
+
+            if (box.style.background == "") {
+                alert("Invalid color name!");
+                box.style.background = "lightgray"; // reset to default
+            }
+        }
+
+        function updateText() {
+            let text = document.getElementById("textInput").value.trim();
+            let box = document.getElementById("box");
+
+            if (text === "") {
+                alert("Please enter some text!");
+            } else {
+                box.textContent = text;
+            }
+        }
+    </script>
+
+</body>
+</html>

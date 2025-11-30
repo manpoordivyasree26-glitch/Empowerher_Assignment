@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic DOM Manipulation</title>
+</head>
+<body>
+
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <button onclick="addItem()">Add Item</button>
+
+    <script>
+        function addItem() {
+            let list = document.querySelector("#myList");
+            let newLi = document.createElement("li");
+            let count = list.children.length + 1;
+
+            newLi.textContent = "Item " + count;
+            if (count % 2 === 1) {
+                newLi.style.fontWeight = "bold";
+                newLi.style.color = "blue";
+            } else {
+                newLi.style.fontStyle = "italic";
+                newLi.style.color = "red";
+            }
+            list.appendChild(newLi);
+        }
+    </script>
+
+</body>
+</html>
