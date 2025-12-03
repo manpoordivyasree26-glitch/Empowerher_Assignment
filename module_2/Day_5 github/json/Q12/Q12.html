@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>paragraph App</title>
+</head>
+<body>
+    <button onclick="addpara()">Add paragraph</button>
+    <button onclick="removepara()">Remove Last paragraph</button>
+    <div id="container"></div>
+<script>
+     function addpara(){
+        let container=document.getElementById("container");
+         let p=document.createElement("p");
+         p.textContent="This is the first paragraph.";
+         container.appendChild(p);
+     }
+     function removepara(){
+        let container=document.getElementById("container")
+        let lastpara=container.lastElementChild;
+        if(lastpara){
+            container.removeChild(lastpara);
+        }
+        
+     }
+
+</script>
+</body>
+</html>

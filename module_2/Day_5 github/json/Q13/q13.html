@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>load Notes</title>
+</head>
+<body>
+    <textarea id="noteBox" rows="5" cols="10" placeholder="Type your notes...."></textarea>
+    <button onclick="saveNote()">SaveNotes</button>
+    <button onclick="loadNote()">LoadNotes</button>
+    <button onclick="clearNotes()">ClearNotes</button>
+    <script>
+        window.onload=function(){
+            let saved=localStorage.getItem("notes");
+            if (saved){
+               document.getElementById("noteBox").value=saved;
+            }
+         }
+         function saveNote(){
+           let note= document.getElementById("noteBox").value.trim();
+           if(note==="")
+           {
+            alert("cannot save the empty notes")
+            return;
+           }
+           localStorage.setItem("notes",note)
+           alert("notes saved")
+         }
+         function loadNote(){
+            let saved=localStorage.getItem("notes")
+            if(saved){
+                document.getElementById("noteBox").value=saved;
+            }
+            else{
+                alert("No saved notes found")
+            }
+            }
+            function clearNotes(){
+                localStorage.removeItem("notes")
+                document.getElementById("noteBox").value="";
+                alert("Notes cleared")
+            }
+         
+
+    </script>
+</body>
+</html>
