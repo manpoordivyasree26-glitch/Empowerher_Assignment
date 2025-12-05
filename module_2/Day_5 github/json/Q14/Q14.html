@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>simple Todo</title>
+  <style>
+    body { 
+        font-family: Arial, sans-serif; 
+        padding:20px; 
+        background:gray; }
+    .app { max-width:520px; 
+        margin:0 auto; 
+        background:white; 
+        padding:16px; 
+        border-radius:8px; }
+    button{ padding:8px 10px; 
+        margin-left:6px; }
+        input[type=text]{ padding:8px; width:70%; }
+    ul{ list-style:none; 
+        padding:0; 
+        margin-top:12px; }
+    li{ display:flex; 
+        justify-content:space-between;
+         align-items:center; 
+         padding:8px; 
+         border-bottom:1px solid beige; }
+    .done{ text-decoration:line-through; 
+        opacity:0.6; }
+    .small{ color:#666;
+         font-size:13px; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <h2>Todo list</h2>
+
+    <!-- searching -->
+    <div>
+      <input id="search" type="text" placeholder="Search Tasks...." />
+    </div>
+
+    <!-- Add new todo -->
+    <div style="margin-top: 8px;">
+      <input id="newTask" type="text" placeholder="Add new Task" />
+      <button id="addBtn">Add</button>
+    </div>
+
+    <!-- fixed ID (no spaces) -->
+    <ul id="todoList"></ul>
+
+    <p class="small">Saved in localStorage key: <code>masai_todos</code></p>
+  </div>
+
+  <script>
+    const STORAGE_KEY = 'masai_todos';
+
+    // DOM references (consistent names)
+    const todoListEl = document.getElementById('todoList');
+    const newTaskEl = document.getElementById('newTask');
+    const addBtn = document.getElementById('addBtn');
+    const searchEl = document.getElementById('search');
+
+    // load or initialize todos
+    let todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+
+    // simple unique id
+    function uid() {
+      return Date.now().toString(36) + Math.floor(Math.random() * 1000).toString(36);
+    }
+
+    // save to localStorage (lowercase save)
+    function save() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
+    }
+
+    // render list (applies search filter)
+    function render() {
+      const q = searchEl.value.trim().toLowerCase();
+      todoListEl.innerHTML = '';
+
+      const visible = todos.filter(t => t.text.toLowerCase().includes(q));
+
+      if (visible.length === 0) {
+        const p = document.createElement('p');
+        p.className = 'small';
+        p.textContent = q ? 'No matching tasks.' : 'No tasks. Add one!';
+        todoListEl.appendChild(p);
+        return;
+      }
+
+      visible.forEach(task => {
+        const li = document.createElement('li');
+
+        // left: checkbox + text
+        const left = document.createElement('div');
+        left.style.display = 'flex';
+        left.style.alignItems = 'center';
+        left.style.gap = '8px';
+
+        const cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.checked = !!task.completed;
+        cb.addEventListener('change', () => toggle(task.id));
+
+        const span = document.createElement('span');
+        span.textContent = task.text;
+        if (task.completed) span.className = 'done';
+
+        left.appendChild(cb);
+        left.appendChild(span);
+
+        // delete button
+        const del = document.createElement('button');
+        del.textContent = 'Delete';
+        del.addEventListener('click', () => removeTask(task.id));
+
+        li.appendChild(left);
+        li.appendChild(del);
+        todoListEl.appendChild(li);
+      });
+    }
+
+    // add a new task
+    function addTask() {
+      const text = newTaskEl.value.trim();
+      if (!text) return;
+      todos.push({ id: uid(), text, completed: false });
+      newTaskEl.value = '';
+      save();
+      render();
+    }
+
+    // toggle complete
+    function toggle(id) {
+      todos = todos.map(t => t.id === id ? { ...t, completed: !t.completed } : t);
+      save();
+      render();
+    }
+
+    // remove a task
+    function removeTask(id) {
+      todos = todos.filter(t => t.id !== id);
+      save();
+      render();
+    }
+
+    // events
+    addBtn.addEventListener('click', addTask);
+    newTaskEl.addEventListener('keydown', e => { if (e.key === 'Enter') addTask(); });
+    searchEl.addEventListener('input', render);
+
+    // initial render
+    render();
+  </script>
+</body>
+</html>
