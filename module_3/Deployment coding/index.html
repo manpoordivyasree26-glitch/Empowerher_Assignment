@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home - Todo App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background:#f3f4f6;
+      margin:0;
+      padding:0;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      min-height:100vh;
+    }
+    .container{
+      width:90%;
+      max-width:700px;
+      background:white;
+      margin-top:30px;
+      padding:20px;
+      border-radius:8px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2{ text-align:center; margin-top:0; }
+    p{ text-align:center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="navbar"></div>
+
+    <h2>Welcome to Modular Todo App</h2>
+    <p>Signup, login and then view your Todos fetched from an API.</p>
+
+    <div id="footer"></div>
+  </div>
+
+  <script type="module" src="./js/home.js"></script>
+</body>
+</html>
